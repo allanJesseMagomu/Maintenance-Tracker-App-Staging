@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript">
+    function AddData() {
+    var x = document.getElementById("mail").value;
+    var y = document.getElementById("name").value;
+    var letters = '/^[a-zA-Z]+$/';
+    if ((parseInt(x) != (x)) && (y == parseInt(y))) {
+        alert("Wrong Value Entered");
+    } else {
+        var rows = "";
+        var name = "sadcsad";
+        var gender = $('input[name="gender"]:checked').val();
+        var age = document.getElementById("age").value;
+        var city = document.getElementById("city").value;
+
+        rows += "<tr><td>" + name + "</td><td>" + gender + "</td><td>" + age + "</td><td>" + city + "</td></tr>";
+        $(rows).appendTo("#list tbody");
+    }
+}
+  </script>
+</head>
+<body>
+  <h2>Fill the form below to make your request.</h2>
+<div id = "data">
+    <form id = "person">    
+        <br><br>
+        Name: <input id = "name" name = "name" type = "text">
+        <br><br>
+        Email: &nbsp&nbsp&nbsp <input id = "mail" name = "maile" type = "email">
+        <br><br>
+        Request type: &nbsp&nbsp&nbsp<select id = "city" name = "city">
+                <option>Lahore</option>
+                <option>Islamabad</option>
+                <option>Karachi</option>
+            </select>
+        <br><br>
+        Request description: &nbsp&nbsp&nbsp<textarea></textarea>
+        <br><br>
+        <input id = "button" type = "button" value = " Reset " onclick = "ResetForm()">&nbsp&nbsp&nbsp
+        <input id = "button" type = "button" value = " Add " onclick = "AddData()">
+        <input id = "button" type = "button" value = " Update ">
+    </form>
+</div>
+<h3>List Of My Requests</h3>
+<div id = "tab">
+        <table id = "list" cellspacing = "0px" cellpadding = "20px" text-align = "center">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Request Type</th>
+                    <th>Request Description</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
+</div>
+
+</body>
+</html>
