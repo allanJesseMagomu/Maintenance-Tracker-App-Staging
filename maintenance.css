@@ -221,7 +221,7 @@ h1 {
     text-transform: uppercase;
     color: #4CAF50;
 }
-input.nem{
+input.nem,input.em,select.req{
     width: 50%;
     height: ;
     padding: 12px 20px;
