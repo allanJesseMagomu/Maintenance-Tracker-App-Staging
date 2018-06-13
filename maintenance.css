@@ -5,12 +5,13 @@ form {
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
-    width: 100%;
+    width: 60%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
     box-sizing: border-box;
+    background-color: #f8f8f8;
+    border: 2px solid #ccc;
 }
 
 /* Set a style for all buttons */
@@ -197,8 +198,32 @@ th, td {
   }
 }
 textarea {
-    width: 100%;
+    width: 60%;
     height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+div.abt{
+  border: 1px solid gray;
+    padding: 8px;
+}
+h3 {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 3px;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+}
+input.nem{
+    width: 50%;
+    height: ;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
