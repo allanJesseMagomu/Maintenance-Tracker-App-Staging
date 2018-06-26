@@ -1,105 +1,141 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="assets/css/maintenance.css">
-  <script type="text/javascript">
-    function AddData() {
-    var x = document.getElementById("mail").value;
-    var y = document.getElementById("name").value;
-    var letters = '/^[a-zA-Z]+$/';
-    if ((parseInt(x) != (x)) && (y == parseInt(y))) {
-        alert("Wrong Value Entered");
-    } else {
-        var rows = "";
-        var name = "sadcsad";
-        var gender = $('input[name="gender"]:checked').val();
-        var age = document.getElementById("age").value;
-        var city = document.getElementById("city").value;
+  <!DOCTYPE html>
+  <html>
+  <head>
+  	<title></title>
+  	<meta charset="utf-8">
+  	<link rel="stylesheet" type="text/css" href="assets/css/maintenance.css">
+  	<script>
+  	var rIndex,
+  	table=document.getElementById("table");
 
-        rows += "<tr><td>" + name + "</td><td>" + gender + "</td><td>" + age + "</td><td>" + city + "</td></tr>";
-        $(rows).appendTo("#list tbody");
+    function addHtmlTableRow() {
+    	// get the table id
+    	var rIndex,
+  	table=document.getElementById("table"),
+    	newRow=table.insertRow(table.length),
+    	cell1=newRow.insertCell(0),
+    	cell2=newRow.insertCell(1),
+    	cell3=newRow.insertCell(2),
+    	cell4=newRow.insertCell(3),
+    	fname=document.getElementById("fname").value,
+    	lname=document.getElementById("lname").value,
+    	age=document.getElementById("age").value,
+    	desc=document.getElementById("desc").value;
+
+    	cell1.innerHTML=fname;
+    	cell2.innerHTML=lname;
+    	cell3.innerHTML=age;
+    	cell4.innerHTML=desc;
+    	selectRowToInput();
+    	
     }
-}
+
+    function selectRowToInput() {
+    		var rIndex,
+  	table=document.getElementById("table");
+    	
+    	for (var i = 1; i < table.rows.length; i++) {
+    		table.rows[i].onclick=function()
+    		{
+    			//get the selected row index
+    			rIndex=this.rowIndex;
+    			document.getElementById("fname").value=this.cells[0].innerHTML;
+    			document.getElementById("lname").value=this.cells[1].innerHTML;
+    			document.getElementById("age").value=this.cells[2].innerHTML;
+    			document.getElementById("desc").value=this.cells[3].innerHTML;
+    		};
+    	}
+    }
+    selectRowToInput();
+
+    function editTableRow() {
+    		var rIndex,
+  	table=document.getElementById("table");
+    	
+    	var fname=document.getElementById("fname").value,
+	    	lname=document.getElementById("lname").value,
+	    	age=document.getElementById("age").value,
+	    	desc=document.getElementById("desc").value;
+
+	    	table.rows[rIndex].cells[0].innerHTML=fname;
+	    	table.rows[rIndex].cells[1].innerHTML=lname;
+	    	table.rows[rIndex].cells[2].innerHTML=age;
+	    	table.rows[rIndex].cells[3].innerHTML=desc;
+
+    }
+    function removeSelectedRow(){
+    			var rIndex,
+  	table=document.getElementById("table");
+
+    	table.deleteRow(rIndex);
+    	//clear input text
+    	document.getElementById("fname").value="";
+    	document.getElementById("lname").value="";
+    	document.getElementById("age").value="";
+    	document.getElementById("desc").value="";
+    }
   </script>
-    <header class="header">
+  <header class="header">
         <h1>Maintenance App Tracker</h1>
     </header>
-    <nav class="hd2">
+  <nav class="hd2">
         <a href="index.html">ABOUT</a>
         <a href="login.html">SIGN OUT</a>
         <a href="viewTable.html">VIEW MY REQUESTS</a>
     </nav>
-</head>
-<body>
-  <h2>Fill the form below to make your request.</h2>
-<div id = "data">
-    <form id = "person">    
-        <br><br>
-        Name: &nbsp&nbsp&nbsp<input id = "name" class="nem" name = "name" type = "text">
-        <br><br>
-        Email: &nbsp&nbsp&nbsp <input id = "mail"  class="em" name = "maile" type = "email">
-        <br><br>
-        Request type: &nbsp&nbsp&nbsp<select id = "city" name = "city" class="req">
-                <option>Lahore</option>
-                <option>Islamabad</option>
-                <option>Karachi</option>
-            </select>
-        <br><br>
-        Request description: &nbsp&nbsp&nbsp<textarea></textarea>
-        <br><br>
-        <input id = "button" type = "button" value = " Reset " onclick = "ResetForm()">&nbsp&nbsp&nbsp
-        <input id = "button" type = "button" value = " Add " onclick = "AddData()">
-        <input id = "button" type = "button" value = " Update ">
-    </form>
-    <div class = "tab">
-    <h3>List Of My Requests</h3>
-        <table class="tbo">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Request Type</th>
-                    <th>Request Description</th>
-                    
-                </tr>
-            </thead>
+  </head>
+  <body>
+  
+         <marquee><b>View your requests in the table on the right.</b></marquee>
+  
+  	
+  	<table id="table" align="right">
+  		<tr>
+  			<th>First Name</th>
+  			<th>Last Name</th>
+  			<th>Age</th>
+  			<th>Description</th>
+  		</tr>
+  		<tr>
+  			<td>A1</td>
+  			<td>B1</td>
+  			<td>C1</td>
+  			<td>D1</td>
+  		</tr>
+  		<tr>
+  			<td>A2</td>
+  			<td>B2</td>
+  			<td>C2</td>
+  			<td>D2</td>
+  		</tr>
+  		<tr>
+  			<td>A3</td>
+  			<td>B3</td>
+  			<td>C3</td>
+  			<td>D4</td>
+  		</tr>
+  		
+  		
+  	</table>
+  
+  
+  	
+  	
+<h2 align="">Fill the form below to make your request.</h2>
+  	<div class="tab-2">
+  	
+  		 First name:&nbsp&nbsp&nbsp<input type="text" name="fname" id="fname"><br><br>
+        Last name:&nbsp&nbsp&nbsp<input type="text" name="lname" id="lname"><br><br>
+        Age:&nbsp&nbsp&nbsp<input type="text" name="age" id="age"><br><br>
+        despription:&nbsp&nbsp&nbsp<textarea name="desc" id="desc">your description</textarea><br><br>
 
-            <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-</div>
+        <button onclick="addHtmlTableRow();">Add</button>
+        <button onclick="editTableRow();">Edit</button>
+        <button onclick="removeSelectedRow();">Remove</button>
+  	
 </div>
 
-</body>
-</html>
+    
+  </body>
+  </html>
+  

@@ -2,7 +2,33 @@
 <html>
 <head>
 	<title></title>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            function addRemoveClass(theRows) {
+                theRows.removeClass("odd even");
+                theRows.filter(":odd").addClass("odd");
+                theRows.filter(":even").addClass("even");
+            }
+            var rows=$("table#mytable tr:not(:first-child)");
+            addRemoveClass(rows);
+
+            $("$selectField").on("change",function()
+        {
+                var selected=this.value;
+                if(selected!="All");{
+                    rows.filter("[position="+selected+"]").show();
+                    rows.not("[position="+selected+"]").hide();
+                    var visibleRows=rows.filter("[position="+selected+"]");
+                    addRemoveClass(visibleRows);
+                }else{
+                    rows.show();
+                    addRemoveClass(rows);
+                }
+            });
+        });
+    </script>
 	<style type="text/css">
+
 		body{
 			background: #eee;
 		}
@@ -206,12 +232,22 @@
         <a href="">VIEW MY REQUESTS</a>
     </nav>
 </head>
+
 <body>
+
 	<div class="odiv">
+        <div>
+    Filter By:<select id="">
+    <option value="ALL">ALL</option>
+    <option value="User">User</option>
+    <option value="Status">Status</option>
+    <option value="ID">ID</option>
+</select>
+</div>
 	<h1 style="text-align:center">Maintenance Requests added.</h1>
 		<div class="idiv">
 			<table class="ti ti-bordered ti-striped ti-hover ti-mc-red">
-				<thead>
+				<thead id="headRw">
 					<tr><th>ID</th>
 						<th>Request</th>
 						<th>Status</th>
@@ -222,7 +258,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr><td data-title="1"></td>
+					<tr position=""><td data-title="1"></td>
 						<td  data-title="Request">request</td>
 						<td  data-title="Status">pending</td>
 						<td  data-title="Response">we shall rectify</td>
