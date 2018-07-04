@@ -227,8 +227,8 @@
         <h1>Maintenance App Tracker</h1>
     </header>
     <nav class="hd2">
-        <a href="index.html">ABOUT</a>
-        <a href="signup.html">SIGN OUT</a>
+        <a href="index.php">ABOUT</a>
+        <a href="signup.php">SIGN OUT</a>
         <a href="">VIEW MY REQUESTS</a>
     </nav>
 </head>
@@ -246,69 +246,29 @@
 </div>
 	<h1 style="text-align:center">Maintenance Requests added.</h1>
 		<div class="idiv">
-			<table class="ti ti-bordered ti-striped ti-hover ti-mc-red">
-				<thead id="headRw">
-					<tr><th>ID</th>
-						<th>Request</th>
-						<th>Status</th>
-						<th>Response</th>
-						<th>Time taken to respond</th>
-						<th>Address</th>
-                        <th>Mark</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr position=""><td data-title="1"></td>
-						<td  data-title="Request">request</td>
-						<td  data-title="Status">pending</td>
-						<td  data-title="Response">we shall rectify</td>
-						<td  data-title="Time taken to respond">3days</td>
-						<td  data-title="Address">p.o box 2344 kampala</td>
-                        <td class="t">
-                            <div class="tog">
-                                <div class="tog-btwn" onclick="this.classList.toggle('active')">
-                                    <div class="inner-cir"></div>
-                                </div>
-                            </div>
-                        </td>
-					</tr>
-					<tr><td data-title="1"></td>
-						<td  data-title="Request">request</td>
-						<td  data-title="Status">pending</td>
-						<td  data-title="Response">we shall rectify</td>
-						<td  data-title="Time taken to respond">3days</td>
-						<td  data-title="Address">p.o box 2344 kampala</td>
-					</tr>
-					<tr><td data-title="1"></td>
-						<td  data-title="Request">request</td>
-						<td  data-title="Status">pending</td>
-						<td  data-title="Response">we shall rectify</td>
-						<td  data-title="Time taken to respond">3days</td>
-						<td  data-title="Address">p.o box 2344 kampala</td>
-					</tr>
-					<tr><td data-title="1"></td>
-						<td  data-title="Request">request</td>
-						<td  data-title="Status">pending</td>
-						<td  data-title="Response">we shall rectify</td>
-						<td  data-title="Time taken to respond">3days</td>
-						<td  data-title="Address">p.o box 2344 kampala</td>
-					</tr>
-					<tr><td data-title="1"></td>
-						<td  data-title="Request">request</td>
-						<td  data-title="Status">pending</td>
-						<td  data-title="Response">we shall rectify</td>
-						<td  data-title="Time taken to respond">3days</td>
-						<td  data-title="Address">p.o box 2344 kampala</td>
-					</tr>
-					<tr><td data-title="1"></td>
-						<td  data-title="Request">request</td>
-						<td  data-title="Status">pending</td>
-						<td  data-title="Response">we shall rectify</td>
-						<td  data-title="Time taken to respond">3days</td>
-						<td  data-title="Address">p.o box 2344 kampala</td>
-					</tr>
-				</tbody>
-			</table>
+			        <?php
+$con=mysqli_connect("localhost","root","");
+if (!$con) {
+	die("can not connect:".mysqli_error());
+
+}
+mysqli_select_db($con,"registration");
+$sql="SELECT * FROM requests";
+$myData=mysqli_query($con,$sql);
+echo "<table border=1 align='right'> 
+<tr>
+<th>Full Name</th>
+<th>Request Description</th>
+</tr>";
+while ($record=mysqli_fetch_array($myData)) {
+	echo "<tr>";
+	echo "<td>".$record['fullName']."</td>";
+	echo "<td>".$record['requestDescription']."</td>";
+	echo "</tr>";
+}
+echo "</table>";
+mysqli_close($con);
+?>
 		</div>	
 	</div>
 </body>
