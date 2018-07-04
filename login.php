@@ -8,7 +8,7 @@
 
   <title></title>
         <header class="header">
-        <h1>Maintenance App Tracker</h1>
+        <h1>Maintenance Tracker App</h1>
     </header> 
     <nav class="hd2">
         <a href="index.php">ABOUT</a>

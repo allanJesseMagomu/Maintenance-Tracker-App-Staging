@@ -77,12 +77,12 @@
     }
   </script>
   <header class="header">
-        <h1>Maintenance App Tracker</h1>
+        <h1>Maintenance Tracker App</h1>
     </header>
   <nav class="hd2">
         <a href="index.html">ABOUT</a>
-        <a href="login.html">SIGN OUT</a>
-        <a href="viewTable.html">VIEW MY REQUESTS</a>
+        <a href="login.php">SIGN OUT</a>
+        <a href="viewTable.php">VIEW MY REQUESTS</a>
     </nav>
   </head>
   <body>

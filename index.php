@@ -3,14 +3,14 @@
 <html>
 <head>
  <header class="header">
-        <h1>Maintenance App Tracker</h1>
+        <h1>Maintenance Tracker App</h1>
     </header>
 	<title>Maintenance Tracker System.</title>
 	 <link rel="stylesheet" type="text/css" href="assets/css/maintenance.css">
 	 <nav class="hd2">
-        <a href="index.php">ABOUT</a>
-        <a href="index.php?logout='1'">SIGN OUT</a>
-        <a href="viewTable.html">VIEW MY REQUESTS</a>
+        <a href="index.html">ABOUT</a>
+        <a href="index.html?logout='1'">SIGN OUT</a>
+        <a href="viewTable.php">VIEW MY REQUESTS</a>
         <a href="MakeReq.php">MAKE REQUEST</a>
     </nav>
 </head>

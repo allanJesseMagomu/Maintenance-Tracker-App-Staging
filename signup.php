@@ -4,7 +4,7 @@
 <head>
   <title></title>
         <header class="header">
-        <h1>Maintence App Tracker</h1>
+        <h1>Maintence Tracker App</h1>
     </header> 
     </head>
     <nav class="hd2">

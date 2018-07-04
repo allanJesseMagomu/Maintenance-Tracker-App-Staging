@@ -27,201 +27,7 @@
             });
         });
     </script>
-	<style type="text/css">
-
-		body{
-			background: #eee;
-		}
-		.odiv{
-			margin: 20px auto;
-			max-width: 960px;
-		}
-		.ti{
-			width: 100%;
-			max-width: 100%;
-			background-color: #fff;
-		}
-.ti>thead>tr,
-.ti>tbody>tr,
-.ti>tfoot>tr,{
-	-webkit-transition:all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-}
-.ti>thead>tr>th,
-.ti>tbody>tr>th,
-.ti>tfoot>tr>th,
-.ti>thead>tr>td,
-.ti>tbody>tr>td,
-.ti>tfoot>tr>td{
-	text-align: left;
-	padding: 1.6rem;
-	vertical-align: top;
-	border-top: 0;
-	-webkit-transition:all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-}
-.ti>thead>tr>th{
-	font-weight: 400;
-	color: #757575;
-	vertical-align: bottom;
-	border-bottom: 1px solid rgba(0,0,0.12);
-}
-.ti>caption + thead>tr:first-child>th,
-.ti>colgroup + thead>tr:first-child>th,
-.ti>thead:first-child>tr:first-child>th,
-.ti>caption + thead>tr:first-child>td,
-.ti>colgroup + thead>tr:first-child>td,
-.ti>thead:first-child>tr:first-child>td{
-	border-top: 0
-}
-.ti>tbody+tbody{
-	border-top: 1px solid rgba(0,0,0,0.12);
-
-}
-.ti.ti{
-	background: #fff;
-}
-.table.no-border{
-	border: 0;
-}
-.table-condensed>thead>tr>th,
-.table-condensed>tbody>tr>th,
-.table-condensed>tfoot>tr>th,
-.table-condensed>thead>tr>td,
-.table-condensed>tbody>tr>td,
-.table-condensed>tfoot>tr>td
-{
-	padding: 0.8rem;
-}
-.ti-bordered{
-	border: 0;
-}
-.ti-bordered>thead>tr>th,
-.ti-bordered>thead>tr>th,
-.ti-bordered>tfoot>tr>th,
-.ti-bordered>thead>tr>th,
-.ti-bordered>tbody>tr>th,
-.ti-bordered>tfoot>tr>td{
-	border: 0;
-	border-bottom: 1px solid #e0e0e0;
-}
-.ti-bordered>thead>tr>th,
-.ti-bordered>thead>tr>td{
-	border-bottom-width: 2px;
-}
-.ti-striped>tbody>tr:nth-child(odd)>td,
-.ti-striped>tbody>tr:nth-child(odd)>th{
-	background-color: #f5f5f5;
-}
-.ti-hover>tbody>tr:hover>td,
-.ti-hover>tbody>tr:hover>th{
-	background-color: rgba(0,0,0,0.12);
-}
-@media screen and(max-width: 768px)
-{
-	.idiv>.ti{
- margin-bottom: 0;
- background-color: transparent;
-		}
-		.idiv>.ti>thead,
-		.idiv>.ti>tfoot{
-			display: none;
-
-		}
-.ti>tbody{
-	display: block;
-}
-.idiv>.ti>tbody>tr{
-	display: block;
-	border: 1px solid #e0e0e0;
-	border-radius: 2px;
-	margin-bottom: 1.6rem;
-}
-.idiv>.ti>tbody>tr{
-	display: block;
-	border:1px solid #e0e0e0;
-	border-radius: 2px ;
-	margin-bottom:1.6rem;
-}
-.idiv>.ti>tbody>tr>td{
-	background-color: #fff;
-	display: block;
-	vertical-align: middle;
-	text-align: right;
-}
-.idiv>.ti>tbody>tr>td[data-title]:before{
-	content: attr(data-title);
-	float: left;
-	font-size: inherit;
-	font-weight: 400;
-	color: #757575;
-}
-.idiv>.ti-bordered{
-	border: 0;
-}
-.idiv>.ti-bordered>tbody>tr>td{
-	border: 0;
-	border-bottom: 1px solid #e0e0e0;
-}
-.idiv>.ti-bordered>tbody>tr>td:last-child{
-	border-bottom: 0;
-}
-.idiv>.ti-bordered>tbody>tr>td,
-.idiv>.ti-bordered>tbody>tr:nth-child(odd){
-	background-color: #fff;
-}
-.idiv>.ti-bordered>tbody>tr>td:nth-child(odd){
-	background-color: #f5f5f5;
-}
-.idiv>.ti-hover>tbody>tr:hover>td,
-.idiv>.ti-hover>tbody>tr:hover{
-	background-color: #fff;
-}
-.idiv>.ti-hover>tbody>tr>td:hover
-{
-	background-color: rgba(0,0,0,0.12);
-}
-.ti-striped.ti-mc-red>body>tr:nth-child(odd)>td,
-.ti-striped.ti-mc-red>tbody>tr:nth-child(odd)th{
-	background-color: #fde0dc;
-}
-.ti-hover.ti-mc-red>tbody>tr:hover>td,
-.ti-hover.ti-mc-red>tbody>tr:hover>th{
-	background-color: #f9bdbb;
-}
-}
-.cont{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-.tog-btwn{
-    width:60px;
-    height:30px;
-    background:gray;
-    border-radius:30px;
-    padding: 5px;
-    transition: all 300ms ease-in-out;
-}
-.tog-btwn>.inner-cir{
-    width: 30px;
-    height: 30px;
-    background: #fff;
-    border-radius: 50%;
-    transition: all 300ms ease-in-out;
-}
-.tog-btwn.active{
-    background:#00acee;
-}
-.tog-btwn.active>.inner-cir{
-    margin-left: 30px;
-}
-</style>
+	
         <link rel="stylesheet" type="text/css" href="assets/css/maintenance.css">
 <header class="header">
         <h1>Maintenance App Tracker</h1>
@@ -229,7 +35,7 @@
     <nav class="hd2">
         <a href="index.php">ABOUT</a>
         <a href="signup.php">SIGN OUT</a>
-        <a href="">VIEW MY REQUESTS</a>
+        <a href="viewTable.php">VIEW MY REQUESTS</a>
     </nav>
 </head>
 
@@ -255,7 +61,7 @@ if (!$con) {
 mysqli_select_db($con,"registration");
 $sql="SELECT * FROM requests";
 $myData=mysqli_query($con,$sql);
-echo "<table border=1 align='right'> 
+echo "<table align='center'> 
 <tr>
 <th>Full Name</th>
 <th>Request Description</th>
