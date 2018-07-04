@@ -11,7 +11,7 @@
         <a href="index.php">ABOUT</a>
         <a href="index.php?logout='1'">SIGN OUT</a>
         <a href="viewTable.html">VIEW MY REQUESTS</a>
-        <a href="MakeReq.html">MAKE REQUEST</a>
+        <a href="MakeReq.php">MAKE REQUEST</a>
     </nav>
 </head>
 <body>

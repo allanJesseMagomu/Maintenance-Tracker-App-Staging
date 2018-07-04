@@ -1,3 +1,4 @@
+  
   <!DOCTYPE html>
   <html>
   <head>
@@ -87,53 +88,51 @@
   <body>
   
          <marquee><b>View your requests in the table on the right.</b></marquee>
-  
-  	
-  	<table id="table" align="right">
-  		<tr>
-  			<th>First Name</th>
-  			<th>Last Name</th>
-  			<th>Age</th>
-  			<th>Description</th>
-  		</tr>
-  		<tr>
-  			<td>A1</td>
-  			<td>B1</td>
-  			<td>C1</td>
-  			<td>D1</td>
-  		</tr>
-  		<tr>
-  			<td>A2</td>
-  			<td>B2</td>
-  			<td>C2</td>
-  			<td>D2</td>
-  		</tr>
-  		<tr>
-  			<td>A3</td>
-  			<td>B3</td>
-  			<td>C3</td>
-  			<td>D4</td>
-  		</tr>
-  		
-  		
-  	</table>
-  
-  
-  	
-  	
-<h2 align="">Fill the form below to make your request.</h2>
-  	<div class="tab-2">
-  	
-  		 First name:&nbsp&nbsp&nbsp<input type="text" name="fname" id="fname"><br><br>
-        Last name:&nbsp&nbsp&nbsp<input type="text" name="lname" id="lname"><br><br>
-        Age:&nbsp&nbsp&nbsp<input type="text" name="age" id="age"><br><br>
-        despription:&nbsp&nbsp&nbsp<textarea name="desc" id="desc">your description</textarea><br><br>
+         <?php
+$con=mysqli_connect("localhost","root","");
+if (!$con) {
+	die("can not connect:".mysqli_error());
 
-        <button onclick="addHtmlTableRow();">Add</button>
+}
+mysqli_select_db($con,"registration");
+$sql="SELECT * FROM requests";
+$myData=mysqli_query($con,$sql);
+echo "<table border=1 align='right'> 
+<tr>
+<th>Full Name</th>
+<th>Request Description</th>
+</tr>";
+while ($record=mysqli_fetch_array($myData)) {
+	echo "<tr>";
+	echo "<td>".$record['fullName']."</td>";
+	echo "<td>".$record['requestDescription']."</td>";
+	echo "</tr>";
+}
+echo "</table>";
+mysqli_close($con);
+?>
+
+  
+<h2 align="">Fill the form below to make your request.</h2>
+  	
+  	<form action="insert.php" method="post"> 
+    <div class="tab-2">
+  		 Full Name:&nbsp&nbsp&nbsp<input type="text" name="fullName" id="fname"><br><br>
+        Request Type&nbsp&nbsp&nbsp<select class="req">
+        <option></option>
+        <option></option>
+        <option></option>
+        </select>
+        <br><br>
+      
+       Request Despription:&nbsp&nbsp&nbsp<textarea name="Descrpt" id="desc">your description</textarea><br><br>
+
+        <input type="submit" value="Add">
         <button onclick="editTableRow();">Edit</button>
         <button onclick="removeSelectedRow();">Remove</button>
   	
 </div>
+</form>
 
     
   </body>
