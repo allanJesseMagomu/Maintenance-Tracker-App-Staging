@@ -8,6 +8,7 @@
 	<title>Maintenance Tracker System.</title>
 	 <link rel="stylesheet" type="text/css" href="assets/css/maintenance.css">
 	 <nav class="hd2">
+         <h2 class="header" align="left">HOME PAGE</h2>
         <a href="index.html">ABOUT</a>
         <a href="index.html?logout='1'">SIGN OUT</a>
         <a href="viewTable.php">VIEW MY REQUESTS</a>
@@ -16,7 +17,7 @@
 </head>
 <body>
 <div>
-	<h2 class="header">HOME PAGE</h2>
+	
 </div>
 	<div class="content">
     <?php if(isset($_SESSION['success'])):?>
