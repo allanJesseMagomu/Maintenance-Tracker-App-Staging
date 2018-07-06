@@ -1,4 +1,5 @@
 
+<html><body><script></script></body></html>
 $(document).ready(function () {
 	function addRemoveClass(theRows) {
 		theRows.removeClass("odd even");
@@ -8,13 +9,12 @@ $(document).ready(function () {
 	var rows = $("table#myTable tr:not(:first-child)");
 
 	addRemoveClass(rows);
-
 	$("#selectField").on("change", function () {
 		var selected = this.value;
 		if (selected !== "ALL") {
 			rows.filter("[position=" + selected + "]").show();
 			rows.not("[position=" + selected + "]").hide();
-			var visibleRows = rows.filter("[position=" + selected + "]");
+		var visibleRows = rows.filter("[position=" + selected + "]");
 			addRemoveClass(visibleRows);
 		} else {
 			rows.show();
@@ -23,3 +23,4 @@ $(document).ready(function () {
 	});
 
 });
+
