@@ -2,19 +2,20 @@
     <head>
         <title>
         </title>
-		<script src="jQuery/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript"  src="jquery-3.3.1.js"></script>
+		
     </head>
     <body>
-        <script src="jquery.min.js"></script>
+        
         Filter by position:
-        <select id="selectField">
-            <option value="ALL" selected>ALL</option>
+        <select id="selectField" ">
+            <option value="ALL" selected >ALL</option>
             <option value="student">STUDENT</option>
-            <option value="ceo">CEO</option>
+            <option value="ceo" >CEO</option>
             <option value="employee">EMPLOYEE</option>
         </select>
         <br><br>
-        <table border="0" padding="1" text-align="center" id="myTable">
+        <table border="1" padding="1" id="myTable">
     <tr id="HeadRow">
     <td>NAME</td>
     <td>SEX</td>
@@ -57,6 +58,68 @@
     <td>EMPLOYEE</td>
     <td>28</td>    
     </tr>
+    <tr position="student">
+    <td>MAGOMU ALLAN</td>
+    <td>MALE</td>
+    <td>STUDENT</td>
+    <td>20</td>    
+    </tr>
+    <tr position="ceo">
+    <td>NANSAMBA LISA</td>
+    <td>FEMALE</td>
+    <td>CEO</td>
+    <td>25</td>    
+    </tr>
+    <tr position="employee">
+    <td>MUSANYANA RICH</td>
+    <td>MALE</td>
+    <td>EMPLOYEE</td>
+    <td>28</td>    
+    </tr>
+     <tr position="ceo">
+    <td>WAMONO JOVAN</td>
+    <td>MALE</td>
+    <td>CEO</td>
+    <td>28</td>    
+    </tr>
+     <tr position="student">
+    <td>NSAMBA BABKER</td>
+    <td>MALE</td>
+    <td>STUDENT</td>
+    <td>28</td>    
+    </tr>
+    <tr position="employee">
+     <td>GIMEI ALLAN</td>
+    <td>MALE</td>
+    <td>EMPLOYEE</td>
+    <td>28</td>    
+    </tr>
+    <script type="text/javascript">
+    	$(document).ready(function () {
+	function addRemoveClass(theRows) {
+		theRows.removeClass("odd even");
+		theRows.filter("odd").addClass("odd");
+		theRows.filter("even").addClass("even");
+	}
+	var rows = $("table#myTable tr:not(:first-child)");
+
+	addRemoveClass(rows);
+	$("#selectField").on("change", function () {
+		var selected = this.value;
+		if (selected !== "ALL") {
+			rows.filter("[position=" + selected + "]").show();
+			rows.not("[position=" + selected + "]").hide();
+		var visibleRows = rows.filter("[position=" + selected + "]");
+			addRemoveClass(visibleRows);
+		} else {
+			rows.show();
+			addRemoveClass(rows);
+		}
+	});
+
+});
+
+    </script>
 </table>
     </body>
     

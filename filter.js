@@ -1,5 +1,4 @@
 
-<html><body><script></script></body></html>
 $(document).ready(function () {
 	function addRemoveClass(theRows) {
 		theRows.removeClass("odd even");
