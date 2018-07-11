@@ -8,7 +8,7 @@
     <body>
         
         Filter by position:
-        <select id="selectField" ">
+        <select id="selectField">
             <option value="ALL" selected >ALL</option>
             <option value="student">STUDENT</option>
             <option value="ceo" >CEO</option>
@@ -94,31 +94,7 @@
     <td>EMPLOYEE</td>
     <td>28</td>    
     </tr>
-    <script type="text/javascript">
-    	$(document).ready(function () {
-	function addRemoveClass(theRows) {
-		theRows.removeClass("odd even");
-		theRows.filter("odd").addClass("odd");
-		theRows.filter("even").addClass("even");
-	}
-	var rows = $("table#myTable tr:not(:first-child)");
-
-	addRemoveClass(rows);
-	$("#selectField").on("change", function () {
-		var selected = this.value;
-		if (selected !== "ALL") {
-			rows.filter("[position=" + selected + "]").show();
-			rows.not("[position=" + selected + "]").hide();
-		var visibleRows = rows.filter("[position=" + selected + "]");
-			addRemoveClass(visibleRows);
-		} else {
-			rows.show();
-			addRemoveClass(rows);
-		}
-	});
-
-});
-
+    <script type="text/javascript" src="filter.js">
     </script>
 </table>
     </body>
