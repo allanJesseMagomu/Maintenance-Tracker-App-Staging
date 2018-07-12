@@ -37,10 +37,8 @@ $(document).ready(function () {
     		{
     			//get the selected row index
     			rIndex=this.rowIndex;
-    			document.getElementById("nam").value=this.cells[0].innerHTML;
-    			document.getElementById("lname").value=this.cells[1].innerHTML;
-    			document.getElementById("age").value=this.cells[2].innerHTML;
-    			document.getElementById("desc").value=this.cells[3].innerHTML;
+    			document.getElementById("stati").value=this.cells[0].innerHTML;
+    			
     		};
     	}
     }
@@ -48,17 +46,11 @@ $(document).ready(function () {
 
     function editTableRow() {
     		var rIndex,
-  	table=document.getElementById("table");
+  	table=document.getElementById("myTable");
     	
-    	var fname=document.getElementById("fname").value,
-	    	lname=document.getElementById("lname").value,
-	    	age=document.getElementById("age").value,
-	    	desc=document.getElementById("desc").value;
-
+    	var fname=document.getElementById("stati").value;
 	    	table.rows[rIndex].cells[0].innerHTML=fname;
-	    	table.rows[rIndex].cells[1].innerHTML=lname;
-	    	table.rows[rIndex].cells[2].innerHTML=age;
-	    	table.rows[rIndex].cells[3].innerHTML=desc;
+	    	
 
     }
     function removeSelectedRow(){

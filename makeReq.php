@@ -1,4 +1,5 @@
   <?php include('server.php');?>
+ 
   <!DOCTYPE html>
   <html>
   <head>
@@ -27,18 +28,21 @@
     <div class="tab-2">
   		 Full Name:&nbsp&nbsp&nbsp<input type="text" name="fullName" id="fname"><br><br>
         Request Type:&nbsp&nbsp&nbsp<select id="selectField" name="RequestType">
-    <option value="gen" selected>General</option>
+    <option value="General" selected>General</option>
     <option value="Maintenance">Maintenance</option>
     <option value="Repair">Repair</option>
 </select>
         <br><br>
       
        Request Despription:&nbsp&nbsp&nbsp<textarea name="Descrpt" id="desc">your description</textarea><br><br>
-
-        <input type="submit" value="Add" class="butt">
+		Status:&nbsp&nbsp&nbsp<select id="selectField" name="stati">
+    <option value="pending" selected>Pending</option>
+    <option value="approved">Approved</option>
+    <option value="rejected">Rejected</option>
+		<option value="complete">Complete</option>
+</select><br><br>
 		<button type="submit">Add</button>
-        <button onclick="editTableRow();">Edit</button>
-        <button onclick="removeSelectedRow();">Remove</button>
+        
   	
 </div>
 </form>

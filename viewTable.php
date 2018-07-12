@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title></title>
+	<script type="text/javascript"  src="jquery-3.3.1.js"></script>
+	<script src='filter.js' ></script>
 	
         <link rel="stylesheet" type="text/css" href="assets/css/maintenance.css">
 <header class="header">
@@ -59,12 +61,5 @@ mysqli_close($con);
 ?>
 		</div>	
 	</div>
-	
-	<div align=center>
-	NAM:<input type="text" name="nam" class="nm" id="nam">
-	<input type="text" name="" class="">
-	<input type="text" name=""  class="">
-	<input type="text" name="" class="">
-		</div>
 </body>
 </html>

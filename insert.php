@@ -9,9 +9,12 @@ if (!mysqli_select_db($con,'registration')) {
 $fullName=$_POST['fullName'];
 $RequestType=$_POST['RequestType'];
 $Descrpt=$_POST['Descrpt'];
+$status=$_POST['stati'];
 
 
-$sql="INSERT INTO requests (fullName,RequestType,requestDescription) VALUES ('$fullName','$RequestType','$Descrpt')";
+
+$sql="INSERT INTO requests (fullName,RequestType,requestDescription,Status) VALUES ('$fullName','$RequestType','$Descrpt','$status')";
+
 if (!mysqli_query($con,$sql)) {
 	echo 'Not Inserted';
 }
@@ -21,7 +24,7 @@ else
 }
 header("refresh:2; url=makeReq.php");
 //insert selected option
-			        <?php
+			        
 $con=mysqli_connect("localhost","root","");
 if (!$con) {
 	die("can not connect:".mysqli_error());
@@ -49,5 +52,4 @@ while ($record=mysqli_fetch_array($myData)) {
 }
 echo "</table>";
 mysqli_close($con);
-?>
 ?>
