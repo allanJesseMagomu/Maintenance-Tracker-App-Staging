@@ -37,7 +37,7 @@ $password_2=mysqli_real_escape_string($conn,$_POST['password_2']);
         mysqli_query($conn,$sql);
         $_SESSION['username']=$username;
         $_SESSION['success']="you are now logged in";
-        header('location:index.php');
+        header('location:myhome.php');
     }
 }
 //log user in from login page.
@@ -58,7 +58,7 @@ if(isset($_POST['login'])){
         if(mysqli_num_rows($result)==1){
             $_SESSION['username']=$username;
         $_SESSION['success']="you are now logged in";
-        header('location:index.php');
+        header('location:myhome.php');
         }else{
             array_push($errors,"wrong username/password combination");
         }

@@ -6,7 +6,7 @@
     
   </div>
 
-  <title></title>
+  <title>Login page</title>
         <header class="header">
         <h1>Maintenance Tracker App</h1>
     </header> 

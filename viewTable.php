@@ -13,6 +13,7 @@
         <a href="index.php">ABOUT</a>
         <a href="signup.php">SIGN OUT</a>
         <a href="viewTable.php">VIEW MY REQUESTS</a>
+		<a href="viewTable.php">VIEW ALL REQUESTS</a>
     </nav>
 </head>
 

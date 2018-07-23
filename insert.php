@@ -22,7 +22,7 @@ else
 {
 	echo 'Inserted';
 }
-header("refresh:2; url=makeReq.php");
+header("refresh:2; url=myhome.php");
 //insert selected option
 			        
 $con=mysqli_connect("localhost","root","");
