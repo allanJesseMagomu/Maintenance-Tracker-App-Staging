@@ -6,7 +6,7 @@ if(isset($_REQUEST["submit"]))
 {
 	$user=$_REQUEST["username"];
 	$pass=$_REQUEST["password"];
-	$query=mysqli_query($conn,"SELECT * FROM user WHERE username='$user' && password='$pass'");
+	$query=mysqli_query($conn,"SELECT * FROM users WHERE username='$user' && password='$pass'");
 	$rowcount=mysqli_num_rows($query);
 	if($rowcount==true)
 	{
@@ -16,7 +16,6 @@ if(isset($_REQUEST["submit"]))
 }
 echo "<center> your username and password is wrong</center>";
 }
-
 ?>
 <h2>Login.</h2>
 <form action="" method="post">

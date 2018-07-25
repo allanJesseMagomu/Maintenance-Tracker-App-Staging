@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>signUp page</title>
         <header class="header">
-        <h1>Maintence Tracker App</h1>
+        <h1>Maintenance Tracker App</h1>
     </header> 
     </head>
     <nav class="hd2">
@@ -12,38 +12,37 @@
         <a href="login.php">LOGIN</a>
         <a href="" >ADMINISTRATOR SIGNUP</a>
     </nav>
-  <link rel="stylesheet" type="text/css" href="assets/css/maintenance.css">
+  <link rel="stylesheet" href="c.css">
 
 <body>
-<form action="signup.php" method="post" style="border:1px solid #ccc">
-  <?php include('errors.php') ?>
-  <div class="container">
+<form action="signup.php" method="post">
+
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
-    <hr>
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required><br><br>
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required><br><br>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password_1" required><br><br>
-
-    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <p>
+    <label for="username" class="floatLabel"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+    </p>
+    <p>
+    <label for="email" class="floatLabel"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+    </p>
+    <p>
+    <label for="psw" class="floatLabel"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password_1" required>
+    </p>
+    <p>
+    <label for="psw-repeat" class="floatLabel"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="password_2" required>
-
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
-
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn" name="register">Sign Up</button>
-    </div>
-  </div>
-  <p>Already a member? <a href="login.php">Login</a></p>
+    </p>
+    <p>
+    <input type="submit" value="Sign Up" id="submit" name="register">
+    </p>
+    
+    <p><button type="button" class="cancelbtn">Cancel</button></p> 
+      
+  <p><b>Already a member? <a href="login.php">Login</a></b></p>
+  <?php include('errors.php') ?>
   </form>
   </body>
 </html>

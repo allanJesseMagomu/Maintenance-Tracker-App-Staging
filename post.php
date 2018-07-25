@@ -16,10 +16,10 @@ else
 
 <?php
 $user=$_SESSION["username"];
-$query1 = mysqli_query($conn,"SELECT * FROM user WHERE username='$user'");
+$query1 = mysqli_query($conn,"SELECT * FROM users WHERE username='$user'");
 $row1=mysqli_fetch_array($query1);
 $id=$row1["id"];
-$query=mysqli_query($conn,"select * from requests where id=$id");
+$query=mysqli_query($conn,"select * from requests where user_id=$id");
 $rowcount=mysqli_num_rows($query);
 ?>
 <table>
@@ -31,9 +31,9 @@ $rowcount=mysqli_num_rows($query);
 <td>Status</td>
 </tr>
 	<?php
-	for ($i=1;$i=$rowcount;$i++)
+	for ($i=1;$i<=$rowcount;$i++)
 	{
-		$row=mysql_fetch_array($query);
+		$row=mysqli_fetch_array($query);
 	?>
 	<tr>
 	<td><?php echo $row['ID'] ?></td>

@@ -5,7 +5,7 @@
 	<script type="text/javascript"  src="jquery-3.3.1.js"></script>
 	<script src='filter.js' ></script>
 	
-        <link rel="stylesheet" type="text/css" href="assets/css/maintenance.css">
+        <link rel="stylesheet" type="text/css" href="c.css">
 <header class="header">
         <h1>Maintenance App Tracker</h1>
     </header>
@@ -20,8 +20,9 @@
 <body>
 
 	<div class="odiv">
-        <div align="center">
-    Filter By Status:<select id="selectField" class="req">
+        <div>
+    <b style="color:white;"> Filter By Status:</b>
+    <select id="selectField" class="req">
     <option value="approved">Approved</option>
     <option value="rejected">Rejected</option>
     <option value="pending">Pending</option>
@@ -29,7 +30,7 @@
 </select>
 </div>
 		
-	<h1 style="text-align:center">Maintenance Requests added.</h1>
+	<h1 style="text-align:center;color:#f2f2f2;">Maintenance Requests added.</h1>
 		<div class="idiv">
 			        <?php
 $con=mysqli_connect("localhost","root","");

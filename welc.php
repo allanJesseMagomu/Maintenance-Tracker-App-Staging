@@ -16,26 +16,24 @@ else
 
 <?php
 $user=$_SESSION["username"];
-$query = mysqli_query($conn,"SELECT * FROM user WHERE username='$user'");
-//$rowcount=mysql_num_rows($query);
-if (!$query) {
-    printf("Error: %s\n", mysqli_error($conn));
-    exit();
-}
+$query = mysqli_query($conn,"SELECT * FROM users WHERE username='$user'");
+$rowcount=mysqli_num_rows($query);
+
 $row=mysqli_fetch_array($query);
-//$id=$row['ID'];
+$id=$row['id'];
 if(isset($_REQUEST["submit"]))
 {
 		$fullName=$_POST['fullName'];
 	$RequestType=$_POST['RequestType'];
 	$Descrpt=$_POST['Descrpt'];
 	$status=$_POST['stati'];
-$sql="INSERT INTO requests (fullName,RequestType,requestDescription,Status) VALUES ('$fullName','$RequestType','$Descrpt','$status')";
-	//mysqli_query($sql,"registration");
+	
+$sql="INSERT INTO requests (fullName,RequestType,requestDescription,Status,user_id) VALUES ('$fullName','$RequestType','$Descrpt','$status','$id')";
+	mysqli_query($conn,$sql);
 }
 
 ?>
-<form method="post" action="welc.php">
+<form method="post" action="">
 	<table>
 	<tr>
 	<td>Full Name</td>	

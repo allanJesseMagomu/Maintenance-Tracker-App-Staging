@@ -36,10 +36,11 @@ $myData=mysqli_query($con,$sql);
 echo "<table align='right' id='myTable'> 
 <tr>
 <th>ID</th>
-<th>Full Name</th>
+<th>Device Name</th>
 <th>Request Type</th>
 <th>Request Description</th>
 <th>Status</th>
+
 </tr>";
 while ($record=mysqli_fetch_array($myData)) {
 	echo "<tr>";
